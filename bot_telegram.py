@@ -1,14 +1,14 @@
 import requests
 import os
 
-# Variáveis do ambiente (serão definidas no GitHub)
-TOKEN = os.getenv("8475969808:AAG180yzsb2Nzv0jQwH7WXrK-Khgc1n7pp0")
-CHAT_ID = os.getenv("1003166982954")
+# As variáveis TOKEN e CHAT_ID virão dos "Secrets" do GitHub
+TOKEN = os.getenv("TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 def enviar_mensagem():
     mensagem = "🔥 Nova promoção automática! [Clique aqui](https://meulinkdeafiliado.com)"
-    url = f"https://api.telegram.org/bot{8475969808:AAG180yzsb2Nzv0jQwH7WXrK-Khgc1n7pp0}/sendMessage"
-    params = {"chat_id": 1003166982954, "text": mensagem, "parse_mode": "Markdown"}
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+    params = {"chat_id": CHAT_ID, "text": mensagem, "parse_mode": "Markdown"}
     requests.get(url, params=params)
     print("Mensagem enviada com sucesso!")
 
